@@ -2,7 +2,7 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
-from apps.views.test_views import TestModelView, TestModelViewSet
+from apps.views.test_views import  TestModelViewSet
 from apps.views.userview import UserViewSet, CustomAuthToken
 
 router = DefaultRouter()
@@ -14,7 +14,7 @@ urlpatterns = [
     path('sign_up/', UserViewSet.as_view({'post': 'create'}), name='user-create'),
     path('login/', CustomAuthToken.as_view(), name='user-login'),
 
-    path('test/<int:pk>/', TestModelView.as_view(), name='test-model-detail'),
+    # path('test/<int:pk>/', TestModelView.as_view(), name='test-model-detail'),
 
 
 ]
